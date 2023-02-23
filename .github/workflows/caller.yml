@@ -16,4 +16,9 @@ jobs:
         id: variables
         run: |
           echo "::set-output name=environment::dev" >> "$GITHUB_OUTPUT"
-    
+
+  automated_tests:
+    needs: [setting_branch]
+    uses: ralvarez-globant/callee/.github/workflows/callee.yml@main
+    with:
+      environment: "${{ needs.setting_branch.outputs.environment }}"
