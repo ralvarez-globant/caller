@@ -1,0 +1,20 @@
+name: Automated Tests
+on:
+  workflow_run:
+    branches:
+      - "main"
+env:
+  environment: dev
+
+jobs:
+  setting_branch:
+    name: Set Parameter
+    runs-on: ubuntu-latest
+    outputs:
+      environment: ${{ steps.variables.outputs.environment }}
+    steps:
+      - name: Variables
+        id: variables
+        run: |
+          echo "::set-output name=environment::dev" >> "$GITHUB_OUTPUT"
+    
