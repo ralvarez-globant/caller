@@ -1,8 +1,7 @@
 name: Automated Tests
 on:
-  workflow_run:
-    branches:
-      - "main"
+  push:
+
 env:
   environment: dev
 
