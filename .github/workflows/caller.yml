@@ -19,6 +19,6 @@ jobs:
 
   automated_tests:
     needs: [setting_branch]
-    uses: ralvarez-globant/callee/.github/workflows/callee.yml@main
+    uses: git@github.com:ralvarez-globant/callee.git/.github/workflows/callee.yml@main
     with:
       environment: "${{ needs.setting_branch.outputs.environment }}"
