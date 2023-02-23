@@ -21,4 +21,4 @@ jobs:
     needs: [setting_branch]
     uses: ralvarez-globant/callee/.github/workflows/callee.yml@main
     with:
-      environment: "A${{ needs.setting_branch.outputs.environment }}"
+      environment: ${{ needs.setting_branch.outputs.environment }}
